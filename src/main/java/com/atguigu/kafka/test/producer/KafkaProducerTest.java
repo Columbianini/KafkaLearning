@@ -16,6 +16,7 @@ public class KafkaProducerTest {
         // TODO: serialize the producer data (k, v)
         configMap.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         configMap.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+        configMap.put(ProducerConfig.INTERCEPTOR_CLASSES_CONFIG, ValueInterceptorTest.class.getName());
 
         // TODO: Create  Producer object
         KafkaProducer<String, String> producer = new KafkaProducer<>(configMap);
